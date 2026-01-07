@@ -114,7 +114,7 @@
       --fs-1000: 7.5rem;
     }
   }
-
+  /* in another selector for syntax highlighting reasons only */
   :root {
     --text-main: var(--clr-gray-100);
     --text-high-contrast: var(--clr-white);
@@ -145,7 +145,9 @@
     --border-radius-2: 0.5rem;
     --border-radius-3: 0.75rem;
   }
+}
 
+@layer base {
   body {
     font-family: var(--ff-body);
     font-size: var(--font-size-regular);
@@ -170,50 +172,47 @@
   a:focus-visible {
     color: var(--text-brand-light);
   }
+
+  img {
+    border-radius: var(--border-radius-3);
+  }
 }
 
 @layer layout {
-  .section {
-    --padding: 3.75rem;
-    padding-block: var(--padding);
-
-    @media (min-width: 760px) {
-      --padding: 8rem;
-
-      &[data-padding="compact"] {
-        -padding: 4.5rem;
-      }
-    }
-  }
-
   .wrapper {
     --wrapper-max-width: 1130px;
+    --wrapper-padding: 1rem;
+
     max-width: var(--wrapper-max-width);
     margin-inline: auto;
-    padding-inline: 1rem;
+    padding-inline: var(--wrapper-padding);
+
+    /* helps to match the Figma file */
     box-sizing: content-box;
+  }
 
-    &[data-width="narrow"] {
-      --wrapper-max-width: 720px;
-    }
+  .wrapper[data-width="narrow"] {
+    --wrapper-max-width: 720px;
+  }
 
-    &[data-width="wide"] {
-      --wrapper-max-width: 1330px;
+  .wrapper[data-width="wide"] {
+    --wrapper-max-width: 1330px;
+  }
+
+  .section {
+    padding-block: 3.75rem;
+
+    @media (min-width: 760px) {
+      padding-block: 8rem;
+
+      &[data-padding="compact"] {
+        padding-block: 4.5rem;
+      }
     }
   }
 }
 
 @layer utilities {
-  .visually-hidden {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-  }
-
   .text-center {
     text-align: center;
   }
@@ -259,5 +258,15 @@
   }
   .font-size-lg {
     font-size: var(--font-size-lg);
+  }
+
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
   }
 }
