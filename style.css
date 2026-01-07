@@ -114,9 +114,8 @@
       --fs-1000: 7.5rem;
     }
   }
-
+  /* in another selector for syntax highlighting reasons only */
   :root {
-    /* primitives here */
     --text-main: var(--clr-gray-100);
     --text-high-contrast: var(--clr-white);
     --text-brand: var(--clr-brand-500);
