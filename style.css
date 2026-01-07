@@ -114,7 +114,7 @@
       --fs-1000: 7.5rem;
     }
   }
-  /* in another selector for syntax highlighting reasons only */
+
   :root {
     --text-main: var(--clr-gray-100);
     --text-high-contrast: var(--clr-white);
@@ -174,13 +174,14 @@
 
 @layer layout {
   .section {
-    padding-block: 3.75rem;
+    --padding: 3.75rem;
+    padding-block: var(--padding);
 
     @media (min-width: 760px) {
-      padding-block: 8rem;
+      --padding: 8rem;
 
       &[data-padding="compact"] {
-        padding-block: 4.5rem;
+        -padding: 4.5rem;
       }
     }
   }
@@ -211,5 +212,52 @@
     position: absolute;
     white-space: nowrap;
     width: 1px;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+  .text-brand {
+    color: var(--text-brand);
+  }
+  .text-high-contrast {
+    color: var(--text-high-contrast);
+  }
+
+  .section-title {
+    font-size: var(--font-size-heading-regular);
+  }
+
+  .background-base {
+    background-color: var(--background-base);
+  }
+  .background-light {
+    background-color: var(--background-light);
+  }
+  .background-extra-light {
+    background-color: var(--background-extra-light);
+  }
+  .background-dark {
+    background-color: var(--background-dark);
+  }
+  .background-extra-dark {
+    background-color: var(--background-extra-dark);
+  }
+
+  .background-accent {
+    background-color: var(--background-accent-dark);
+  }
+
+  .font-size-sm {
+    font-size: var(--font-size-sm);
+  }
+  .font-size-regular {
+    font-size: var(--font-size-regular);
+  }
+  .font-size-md {
+    font-size: var(--font-size-md);
+  }
+  .font-size-lg {
+    font-size: var(--font-size-lg);
   }
 }
