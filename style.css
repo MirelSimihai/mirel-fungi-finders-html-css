@@ -317,6 +317,10 @@
     }
   }
 
+  [aria-controls="primary-nav"] {
+    display: none;
+  }
+
   .primary-navigation {
     ul {
       display: flex;
@@ -356,6 +360,12 @@
   }
 
   @media (width < 760px) {
+    [aria-controls="primary-nav"] {
+      display: block;
+    }
+    [aria-expanded="true"] ~ .primary-navigation {
+      display: block;
+    }
   }
 
   .site-footer {
