@@ -368,7 +368,7 @@
   }
 
   .card__title {
-    font-size: var(--card-title-font-size, --font-size-heading-regular);
+    font-size: var(--card-title-font-size, --font-size-heading-small);
     color: var(--card-title-color, var(--text-brand));
   }
 
