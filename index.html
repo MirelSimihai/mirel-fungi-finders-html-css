@@ -11,15 +11,21 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="/main.js" defer></script>
   </head>
 
   <body>
+    <a class="skip-to-main" href="#main">Skip to main content</a>
     <header class="site-header">
       <div class="wrapper" data-width="wide">
         <div class="site-header__inner">
           <a href="/"><img class="logo" src="/assets/fungi-finders.svg" /></a>
-          <nav class="primary-navigation">
-            <ul>
+          <button aria-controls="primary-nav" aria-expanded="false">
+            <span class="visually-hidden">Menu</span>
+            <img src="assets/hamburger.svg" alt="" />
+          </button>
+          <nav id="primary-nav" class="primary-navigation">
+            <ul role="list">
               <li><a href="/">Discover</a></li>
               <li><a href="mushroom-guide.html">Mushroom guide</a></li>
               <li><a href="mushroom-guide.html#faq">FAQ</a></li>
@@ -28,7 +34,7 @@
         </div>
       </div>
     </header>
-    <main>
+    <main id="main">
       <section class="hero section flow" data-padding="compact">
         <div class="wrapper">
           <h1 class="hero__title">
